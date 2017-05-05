@@ -5,12 +5,12 @@ layout: default
 <div class="home">
 	<section>
 		<h2 class="smallcap">about</h2>
-		<p><a href="https://github.com/syaning/slim">devalx</a></p>
+		<p><a href="https://github.com/devalx">devalx</a></p>
 	</section>
   <section>
     <ul>
       {% for repository in site.github.public_repositories %}
-        <li>[{{ repository.name }}]({{ repository.html_url }})</li>
+        <li>[{{ repository.name }}]({{ repository.html_url }})({{ repository.description }})</li>
       {% endfor %}
     </ul>
   </section>
