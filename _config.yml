@@ -1,8 +1,10 @@
 title: devalx
 description: pseudo-random software engineering
-google_analytics: 
+
 show_downloads: true
-theme: jekyll-theme-leap-day
+
+google_analytics:
+disqus_shortname:
 
 gems:
   - jekyll-mentions
