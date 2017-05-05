@@ -1,8 +1,29 @@
 ---
 layout: default
 ---
-<div class="container">
- {% for repository in site.github.public_repositories %}
-  * [{{ repository.name }}]({{ repository.html_url }})
-{% endfor %}
+
+<div class="home">
+	<section>
+		<h2 class="smallcap">about</h2>
+		<p><a href="https://github.com/syaning/slim">devalx</a></p>
+	</section>
+  <section>
+    <ul>
+      {% for repository in site.github.public_repositories %}
+        <li>[{{ repository.name }}]({{ repository.html_url }})</li>
+      {% endfor %}
+    </ul>
+  </section>
+	<section>
+		<h2 class="smallcap">posts</h2>
+		<ul class="post-list">
+			{% for post in site.posts limit:15 %}
+			<li>
+				<time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+		<p><a href="{{ "/archives/" | prepend: site.baseurl }}">view more...</a></p>
+	</section>
 </div>
